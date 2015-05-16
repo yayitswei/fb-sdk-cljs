@@ -13,7 +13,7 @@
 
 
 ;; Publics.
-(defn load-sdk [fb-async-init-cb]
+(defn load-sdk [fb-async-init-cb & [env]]
 
   (let [doc js/document uid "fb-sdk-cljs"]
 
@@ -24,9 +24,11 @@
 
       ;; attatch facebook-sdk.
       (let [script (. doc (createElement "script"))]
-        (-> script (.-id)    (set! uid))
+        (-> script (.-id) (set! uid))
         (-> script (.-async) (set! true))
-        (-> script (.-src)   (set! "//connect.facebook.net/en_US/sdk.js"))
+        (-> script (.-src) (set! (if (#{:dev} env)
+                                   "//connect.facebook.net/en_US/sdk/debug.js"
+                                   "//connect.facebook.net/en_US/sdk.js")))
 
         (let [fst-js (-> doc (.getElementsByTagName "script") (aget 0))
               parent (.-parentNode fst-js)]

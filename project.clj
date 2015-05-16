@@ -1,8 +1,8 @@
-(defproject fb-sdk-cljs "0.1.0-SNAPSHOT"
+(defproject yayitswei/fb-sdk-cljs "0.1.0-SNAPSHOT"
 
   :description "facebook javascript sdk wrapper for clojurescript"
 
-  :url "https://github.com/netpyoung/fb-sdk-cljs"
+  :url "https://github.com/yayitswei/fb-sdk-cljs"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
