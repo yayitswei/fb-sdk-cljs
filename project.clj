@@ -1,4 +1,4 @@
-(defproject yayitswei/fb-sdk-cljs "0.1.0-SNAPSHOT"
+(defproject yayitswei/fb-sdk-cljs "0.1.0"
 
   :description "facebook javascript sdk wrapper for clojurescript"
 
